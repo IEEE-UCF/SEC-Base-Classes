@@ -5,6 +5,7 @@
 namespace Classes {
 struct BaseSetup {
   std::string id = "undefined";
+  BaseSetup() = default;
   explicit BaseSetup(const std::string& _id) : id(_id) {}
 };
 class BaseClass {
