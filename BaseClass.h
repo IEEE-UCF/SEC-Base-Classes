@@ -14,10 +14,11 @@ class BaseClass {
   virtual ~BaseClass() = default;
 
   /// @brief Constructor with id
-  BaseClass(const BaseSetup& setup) : setup_(setup) {}
+  BaseClass(const BaseSetup& setup) : setup_(setup), initSuccess_(false) {}
 
   /// @brief Init, pure virtual function
-  virtual void init() = 0;
+  /// @return Init successful or not
+  virtual bool init() = 0;
 
   /// @brief getInfo, pure virtual function
   virtual std::string getInfo() = 0;
@@ -26,8 +27,13 @@ class BaseClass {
   /// @return ID of class
   std::string getId() const { return setup_.id; }
 
+  /// @brief Get initialization success
+  /// @return successful if true
+  bool initSuccess() const { return initSuccess_; }
+
  protected:
   BaseSetup setup_;
+  bool initSuccess_; /// tracks if initalization is successful
 };
 }  // namespace Classes
 
