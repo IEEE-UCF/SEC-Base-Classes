@@ -5,7 +5,7 @@
 namespace Classes {
 class BaseSetup {
  public:
-  BaseSetup() = default;
+  ~BaseSetup() = default;
   BaseSetup(const std::string& _id) : id(_id) {}
   std::string getId() { return id; }
 
