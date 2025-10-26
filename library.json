@@ -1,0 +1,24 @@
+{
+    "name": "SEC-Base-Classes",
+    "version": "1.0.0",
+    "keywords": "Base classes, SEC, Abstraction",
+    "description": "Complete abstraction layer for various hardware components used in SEC projects.",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Aldem Pido",
+            "email": "medlaodip@gmail.com",
+            "url": "https://github.com/Syndric",
+            "maintainer": true
+        },
+    ],
+    "homepage": "https://github.com/IEEE-UCF/SEC-Base-Classes",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IEEE-UCF/SEC-Base-Classes.git"
+    },
+    "examples": [
+    ],
+    "frameworks": "arduino",
+    "platforms": "*"
+}
