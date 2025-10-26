@@ -6,11 +6,12 @@ namespace Classes {
 class BaseSetup {
  public:
   ~BaseSetup() = default;
-  BaseSetup(const std::string& _id) : id(_id) {}
-  std::string getId() { return id; }
+  BaseSetup() = default;
+  BaseSetup(const char* _id) : id(_id) {}
+  const char* getId() const { return id; }
 
  private:
-  std::string id = "undefined";
+  const char* id;
 };
 class BaseClass {
  public:
@@ -25,11 +26,7 @@ class BaseClass {
   virtual bool init() = 0;
 
   /// @brief getInfo, pure virtual function
-  virtual std::string getInfo() = 0;
-
-  /// @brief  Get the id of the class
-  /// @return ID of class
-  std::string getId() const { return setup_.id; }
+  virtual const char* getInfo() = 0;
 
   /// @brief Get initialization success
   /// @return successful if true
