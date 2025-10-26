@@ -1,6 +1,5 @@
 #ifndef BASECLASS_H
 #define BASECLASS_H
-#include <string>
 
 namespace Classes {
 class BaseSetup {
