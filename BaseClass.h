@@ -3,10 +3,14 @@
 #include <string>
 
 namespace Classes {
-struct BaseSetup {
-  std::string id = "undefined";
+class BaseSetup {
+ public:
   BaseSetup() = default;
-  explicit BaseSetup(const std::string& _id) : id(_id) {}
+  BaseSetup(const std::string& _id) : id(_id) {}
+  std::string getId() { return id; }
+
+ private:
+  std::string id = "undefined";
 };
 class BaseClass {
  public:
@@ -33,7 +37,7 @@ class BaseClass {
 
  protected:
   BaseSetup setup_;
-  bool initSuccess_; /// tracks if initalization is successful
+  bool initSuccess_;  /// tracks if initalization is successful
 };
 }  // namespace Classes
 
