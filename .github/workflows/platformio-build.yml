@@ -15,9 +15,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+
+      - name: Cache PlatformIO
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio/.cache
+            ~/.platformio/packages
+            ~/.platformio/platforms
+          key: pio-${{ runner.os }}
+
+      - name: Cache build artifacts
+        uses: actions/cache@v4
+        with:
+          path: examples/blink/.pio
+          key: pio-build-${{ runner.os }}-${{ github.sha }}
+          restore-keys: pio-build-${{ runner.os }}-
 
       - name: Install PlatformIO
         run: pip install --upgrade platformio
 
       - name: Build blink example
-        run: pio run -d examples/platformio
+        run: pio run -d examples/blink
