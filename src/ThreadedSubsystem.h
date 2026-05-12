@@ -68,7 +68,14 @@ struct BaseSetup {
  *
  * Scoped to avoid clashing with macros like `ERROR` or `DEBUG`.
  */
-enum class LoggerLevel { Error = 1, Warning, Info, Debug, Verbose };
+enum class LoggerLevel {
+  Communication = 0,
+  Error = 1,
+  Warning,
+  Info,
+  Debug,
+  Verbose
+};
 
 /**
  * @brief Abstract FreeRTOS-backed subsystem.
